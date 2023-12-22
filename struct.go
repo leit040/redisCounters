@@ -52,8 +52,12 @@ func (c *CountersGroup) GetCounterValue(key string, interval string) int {
 		return 0
 	}
 	lastItem := result[len(result)-1]
-	value := lastItem.([]interface{})[1].(float64)
-	return int(value)
+	value := lastItem.([]interface{})[1].(string)
+	rv, err := strconv.Atoi(value)
+	if err != nil {
+		return -1
+	}
+	return rv
 }
 
 func (c *CountersGroup) IncreaseCounter(key string) {
