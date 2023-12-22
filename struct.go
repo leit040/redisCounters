@@ -100,5 +100,4 @@ func createFeedTimeSeries(key string, r rueidis.Client) {
 	if err != nil {
 		fmt.Printf("Time series for %s already exists\n", key)
 	}
-
 }
