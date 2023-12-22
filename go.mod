@@ -1,4 +1,4 @@
-module redisCounters
+module github.com/leit040/redisCounters
 
 go 1.21
 
