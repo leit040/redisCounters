@@ -76,9 +76,10 @@ type CountersMap struct {
 	cm MapCounters
 }
 
-func NewCountersMap() {
+func NewCountersMap() CountersMap {
 	var cm CountersMap
 	cm.cm = make(map[string]CountersGroup)
+	return cm
 }
 
 func (cm *CountersMap) AddCountersGroup(prefix string, keys []string, connect *RedisPull.Connect) {
